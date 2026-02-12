@@ -1,0 +1,24 @@
+argocd:
+  appName: externalsecret-frcoy
+  project: external-secrets
+  destinationNamespace: frcoy
+  destinationServer: https://kubernetes.default.svc
+
+externalSecret:
+  metadata:
+    name: certificate-secret
+    namespace: frcoy
+  secretStoreRef:
+    name: vault-backend
+    kind: ClusterSecretStore
+  target:
+    name: frcoy-tls
+  data:
+    - secretKey: cert
+      remoteRef:
+        key: latacc/dev/certificates/FrCoy
+        property: certificate
+    - secretKey: key
+      remoteRef:
+        key: latacc/dev/certificates/FrCoy
+        property: private_key

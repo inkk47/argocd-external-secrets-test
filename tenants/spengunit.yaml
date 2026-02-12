@@ -1,0 +1,24 @@
+argocd:
+  appName: externalsecret-spengunit
+  project: external-secrets
+  destinationNamespace: spengunit
+  destinationServer: https://kubernetes.default.svc
+
+externalSecret:
+  metadata:
+    name: certificate-secret
+    namespace: spengunit
+  secretStoreRef:
+    name: vault-backend
+    kind: ClusterSecretStore
+  target:
+    name: spengunit-tls
+  data:
+    - secretKey: cert
+      remoteRef:
+        key: latacc/dev/certificates/SpEngUnit
+        property: certificate
+    - secretKey: key
+      remoteRef:
+        key: latacc/dev/certificates/SpEngUnit
+        property: private_key
