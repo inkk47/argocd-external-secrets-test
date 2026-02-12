@@ -1,5 +1,6 @@
 argocd:
   valueFile: ""
+  releaseName: ""
   appName: externalsecret-frcoy
   project: external-secrets
   destinationNamespace: frcoy

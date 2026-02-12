@@ -1,5 +1,6 @@
 argocd:
   valueFile: ""
+  releaseName: ""
   appName: externalsecret-spengunit
   project: external-secrets
   destinationNamespace: spengunit
