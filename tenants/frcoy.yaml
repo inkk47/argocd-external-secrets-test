@@ -2,7 +2,7 @@ argocd:
   valueFile: ""
   releaseName: ""
   appName: externalsecret-frcoy
-  project: external-secrets
+  project: external-secrets-tls
   destinationNamespace: frcoy
   destinationServer: https://kubernetes.default.svc
 
