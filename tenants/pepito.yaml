@@ -18,9 +18,9 @@ externalSecret:
   data:
     - secretKey: cert
       remoteRef:
-        key: latacc/dev/certificates/pepito
+        key: latacc/dev/certificates/FrCoy
         property: crt
     - secretKey: key
       remoteRef:
-        key: latacc/dev/certificates/pepito
+        key: latacc/dev/certificates/FrCoy
         property: key
