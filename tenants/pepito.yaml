@@ -1,1 +1,26 @@
-asdkmajºsdasjdas
+argocd:
+  valueFile: ""
+  releaseName: ""
+  appName: externalsecret-pepito
+  project: external-secrets-tls
+  destinationNamespace: pepito
+  destinationServer: https://kubernetes.default.svc
+
+externalSecret:
+  metadata:
+    name: certificate-secret
+    namespace: pepito
+  secretStoreRef:
+    name: vault-backend
+    kind: ClusterSecretStore
+  target:
+    name: pepito-tls
+  data:
+    - secretKey: cert
+      remoteRef:
+        key: latacc/dev/certificates/pepito
+        property: crt
+    - secretKey: key
+      remoteRef:
+        key: latacc/dev/certificates/pepito
+        property: key
